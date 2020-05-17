@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="recipeFinder.MainPage" >
+    <!--Pages can be added as references or inline-->
+        <ContentPage Title="Explore" BackgroundColor="LightBlue" IconImageSource="explore.png">
+            <StackLayout>
+        <Image x:Name="Logo"
+               Margin="23,50,0,0"
+               Source="lo.jpg"
+               HeightRequest="75"
+               HorizontalOptions="Start"
+               />
+        <Label Text="Bag To Food"
+               Margin="140,-70,0,0"
+               FontSize="45"
+               TextColor="White"
+               FontAttributes="Bold"
+               />
+        <Label Text="Recipes of The Day:"
+               Margin="0,100,0,0"
+               FontSize="40"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               TextColor="White"
+               />
+        <Button Text="Double Stuffed Cheesy Pasta"
+                x:Name = "Recommendation1"
+                Margin="0,15,0,0"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="LightBlue"
+                BackgroundColor="White"
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="90"
+                WidthRequest="300"
+                Clicked="Recommendation1_Clicked"
+
+                />
+        <Button Text="Chocolate Fudge Brownies"
+                x:Name="Recommendation2"
+                Margin="0,15,0,0"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="LightBlue"
+                BackgroundColor="White"
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="90"
+                WidthRequest="300"
+                Clicked="Recommendation2_Clicked"
+
+                />
+        <Button Text="Crispy Tater Tots"
+                x:Name="Recommendation3"
+                Margin="0,15,0,0"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="LightBlue"
+                BackgroundColor="White"
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="90"
+                WidthRequest="300"
+                Clicked="Recommendation3_Clicked"
+                />
+    </StackLayout>
+
+
+
+
+            </ContentPage>
+
+
+
+
+        <ContentPage Title="Add" BackgroundColor="LightBlue" IconImageSource="add.png">
+            <StackLayout>
+       
+
+        <Label Text="Add to Inventory"
+               Margin="0,40,0,0"
+               HorizontalTextAlignment="Center"
+               FontSize="40"
+               TextColor="White"
+               FontAttributes="Bold"
+               
+               />
+        <ImageButton x:Name="IngredientImageButton"
+                     Margin="0,10,0,0"
+                     Source="grocery.png"
+                     VerticalOptions="End"
+                     HeightRequest="200"
+                     WidthRequest="100"
+                     Clicked="IngredientImageButton_Clicked"
+                    
+                     />
+        <Entry Placeholder="Ingredients"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               x:Name = "NameOfIngredientEntry"
+               TextColor="Black"
+               Margin="20,5,20,0"
+               HeightRequest="50"
+               />
+         <DatePicker TextColor="Black"
+                    x:Name = "ExpiryDate"
+                    Margin="0,1,0,0"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    FontSize="15"
+                    />
+        <Button Text="Add"
+                FontSize="30"
+                FontAttributes="Bold"
+                x:Name = "AddButton"
+                TextColor="Black"
+                HorizontalOptions="Center"
+                Margin="0,5,0,0"
+                WidthRequest="100"
+                HeightRequest="50"
+                BackgroundColor="White"
+                Clicked="AddButton_Clicked"
+                
+                />
+
+
+        <Image Margin="0,10,0,0"
+               Source="basket.jpg"
+               VerticalOptions="Center"
+               HeightRequest="200"
+               WidthRequest="300"
+               />
+        <Label Text="A New Way To Cook!"
+               HorizontalTextAlignment="Center"
+               Margin="0,5,0,0"
+               FontSize="25"
+               FontAttributes="Bold"
+               FontFamily="Times New Roman"
+               TextColor="White"
+               />
+        <Label Text="'Food is the Joy of Creation'      - Ralph Waldo Emerson"
+               x:Name="FoodQuote"
+               Margin="0,10,0,0"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               FontAttributes="Italic"
+               FontFamily="Lobster"
+               TextColor="White"
+               />
+    </StackLayout>
+
+
+
+
+
+
+
+            </ContentPage>
+
+
+
+        <ContentPage Title="Inventory" BackgroundColor="LightBlue" IconImageSource="inventory.png">
+            <StackLayout>
+                <Label x:Name ="labelIng"
+               Text="Your Inventory:"
+               HorizontalOptions="Center"
+               Margin="0, 50, 0, 0"
+               FontSize="50"
+               TextColor="White" 
+               HorizontalTextAlignment="Center"/>
+                <ListView x:Name="IngredientDisplayListView" Margin="20, 0, 20, 20">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <ImageCell Text="{Binding name}"
+                            Detail="{Binding expirationDate}" ImageSource="{Binding image}"/>
+
+
+
+
+                        </DataTemplate>
+
+
+
+
+
+
+                    </ListView.ItemTemplate>
+
+
+
+
+
+
+                </ListView>
+                    
+
+
+            </StackLayout>
+
+
+
+            </ContentPage>
+
+
+
+        <ContentPage Title="Recipes" BackgroundColor="LightBlue" IconImageSource="recipes.png">
+            <StackLayout>
+            <Label Text="Categories"
+                   HorizontalOptions="Center"
+                   Margin="40"
+                   FontSize="50"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   TextColor="White"
+                   FontFamily="Lobster-Regular"/>
+            <StackLayout>
+                <Button x:Name="BreakfastButton"
+                       Text="Breakfast"
+                       Margin="20,0,20,20"
+                       BackgroundColor="White"
+                        HeightRequest="100"
+                        FontSize="40"
+                       Clicked="BreakfastButton_Clicked"/>
+                <Button x:Name="LunchButton"
+                       Text="Lunch"
+                       Margin="20,0,20,20"
+                       BackgroundColor="LightGreen"
+                        HeightRequest="100"
+                        FontSize="40"
+                       Clicked="LunchButton_Clicked"/>
+                <Button x:Name="DinnerButton"
+                       Text="Dinner"
+                       Margin="20,0,20,20"
+                       BackgroundColor="White"
+                        HeightRequest="100"
+                        FontSize="40"
+                       Clicked="DinnerButton_Clicked"/>
+                <Button x:Name="DessertButton"
+                       Text="Dessert"
+                       Margin="20,0,20,20"
+                       BackgroundColor="LightGreen"
+                        HeightRequest="100"
+                        FontSize="40"
+                       Clicked="DessertButton_Clicked"/>
+
+            </StackLayout>
+
+        </StackLayout>
+            
+
+
+
+         </ContentPage>
+
+</TabbedPage>
