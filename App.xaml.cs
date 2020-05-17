@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace recipeFinder
+namespace recipefinder
 {
     public partial class App : Application
     {
@@ -10,7 +10,9 @@ namespace recipeFinder
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage()) ;
+
+            
         }
 
         protected override void OnStart()
